@@ -11,10 +11,8 @@ const Blog = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
   const [isOpen3, setIsOpen3] = useState(false);
-  const [loadingPosts, setLoadingPosts] = useState(true);
-  const [loadingMedia, setLoadingMedia] = useState(true);
 
-  const { posts, setPosts, media, setMedia } = useContext(PostsContext);
+  const { posts, media, loadingMedia, loadingPosts } = useContext(PostsContext);
 
   function toggleModalOne() {
     setIsOpen(!isOpen);
@@ -25,57 +23,6 @@ const Blog = () => {
   function toggleModalThree() {
     setIsOpen3(!isOpen3);
   }
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await fetch(
-          "https://www.matthewalvarez.org/wp-json/wp/v2/blogs"
-        );
-
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-
-        const data = await response.json();
-        setPosts(data);
-        setLoadingPosts(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    const fetchMedia = async () => {
-      try {
-        const response = await fetch(
-          "https://www.matthewalvarez.org/wp-json/wp/v2/media"
-        );
-
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-
-        const data = await response.json();
-        setMedia(data);
-        setLoadingMedia(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchPosts();
-    fetchMedia();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    console.log(posts);
-    console.log(media);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  console.log(posts);
-  console.log(media);
 
   return (
     <>
@@ -94,7 +41,7 @@ const Blog = () => {
               {loadingMedia ? (
                 <p>Loading...</p>
               ) : (
-                <img src={media[2].source_url} alt="blog post"></img>
+                <img src={media[5].source_url} alt="blog post"></img>
               )}
             </div>
             {/* End blog-img */}
@@ -135,7 +82,7 @@ const Blog = () => {
               {loadingMedia ? (
                 <p>Loading...</p>
               ) : (
-                <img src={media[1].source_url} alt="blog post"></img>
+                <img src={media[4].source_url} alt="blog post"></img>
               )}
             </div>
             {/* End blog-img */}
@@ -175,7 +122,7 @@ const Blog = () => {
               {loadingMedia ? (
                 <p>Loading...</p>
               ) : (
-                <img src={media[0].source_url} alt="blog post"></img>
+                <img src={media[3].source_url} alt="blog post"></img>
               )}
             </div>
             {/* End blog-img */}
@@ -223,7 +170,7 @@ const Blog = () => {
                   {loadingMedia ? (
                     <p>Loading...</p>
                   ) : (
-                    <img src={media[2].source_url} alt="blog post"></img>
+                    <img src={media[5].source_url} alt="blog post"></img>
                   )}
                 </div>
                 {/* End blog-img */}
@@ -296,7 +243,7 @@ const Blog = () => {
                   {loadingMedia ? (
                     <p>Loading...</p>
                   ) : (
-                    <img src={media[1].source_url} alt="blog post"></img>
+                    <img src={media[4].source_url} alt="blog post"></img>
                   )}
                 </div>
                 {/* End blog-img */}
@@ -369,7 +316,7 @@ const Blog = () => {
                   {loadingMedia ? (
                     <p>Loading...</p>
                   ) : (
-                    <img src={media[0].source_url} alt="blog post"></img>
+                    <img src={media[3].source_url} alt="blog post"></img>
                   )}
                 </div>
                 {/* End blog-img */}

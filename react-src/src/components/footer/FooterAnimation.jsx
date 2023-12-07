@@ -31,17 +31,7 @@ const Footer = () => {
         {/* End .col */}
 
         <div className="col-md-6 my-2 text-center text-md-right">
-          <p>
-            © {new Date().getFullYear()} copyright{" "}
-            <a
-              href="https://themeforest.net/user/ib-themes/portfolio"
-              target="_blank"
-              rel="noreferrer"
-            >
-              ib-themes{" "}
-            </a>
-            all right reserved
-          </p>
+          <p>© {new Date().getFullYear()} copyright all right reserved</p>
         </div>
         {/* End .col */}
       </div>
