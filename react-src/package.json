@@ -3,16 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/types": "^7.23.5",
     "@devloco/react-scripts-wptheme": "^3.4.1-wp.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "aos": "^2.3.4",
     "axios": "^1.6.2",
     "emailjs-com": "^3.2.0",
     "photoswipe": "^5.3.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-hook-form": "^7.6.3",
     "react-icons": "4.2.0",
     "react-modal": "^3.14.3",
@@ -55,6 +56,11 @@
     ]
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.55.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-react": "^7.33.2",
+    "jest": "^29.7.0",
     "sass-loader": "^10.2.0"
   },
   "homepage": "/wp-content/themes/my_react_theme",

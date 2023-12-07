@@ -65,12 +65,15 @@ const Blog = () => {
 
     fetchPosts();
     fetchMedia();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     console.log(posts);
     console.log(media);
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   console.log(posts);
   console.log(media);
 
